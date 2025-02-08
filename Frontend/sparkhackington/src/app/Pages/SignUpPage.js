@@ -14,6 +14,8 @@ export default function SignUpPage () {
     const [inputLogInEmail, setInputLogInEmail] = useState('');
     const [inputLogInPassword, setInputLogInPassword] = useState('');
 
+    const [items, setItems] = useState([]);
+
     const navigate = useNavigate(); // Hook for navigation
 
     // function navigateToLandingPage(event){
@@ -54,14 +56,14 @@ export default function SignUpPage () {
         job_listing: [],
         business_list: []
         });
-          alert("Student Registation Successfully " + response.data.id);
+        //   alert("Student Registation Successfully " + response.data.id);
           setInputCreateName("");
           setInputCreatePassword("");
           setInputCreateEmail("");
         //   navigate("/landingPage", { state: { LOL: "Hi" } });
-          navigate('/landingPage', {
-            itemId: response.data.id,
-          });
+            localStorage.setItem('items', JSON.stringify(response.data.id));
+          navigate('/landingPage');
+          
         }
     catch(err)
         {
@@ -86,9 +88,11 @@ export default function SignUpPage () {
                 return; // Exit early if response is null or empty
             }else{
                 
-                alert("Student Login Successfully " + response.data.id);
+                // alert("Student Login Successfully " + response.data.id);
+                // localStorage.setItem('myData: ', JSON.stringify(response.data.id));
+                localStorage.setItem('items', JSON.stringify(response.data.id));
                 setInputLogInEmail("");
-                navigate("/landingPage", {LOL: response.data.id});
+                navigate("/landingPage");
             }
         }
     catch(err)

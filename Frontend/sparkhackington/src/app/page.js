@@ -8,10 +8,8 @@ import CreateArea from "./CreateArea";
 import NotesPage from "./NotesPage";
 
 import Home from "./Pages/HomePage";
-<<<<<<< HEAD
 import SignUpPage from "./Pages/SignUpPage";
 import LandingPage from "./Pages/LandingPage";
-=======
 
 const { getJson } = require("serpapi");
 
@@ -23,7 +21,6 @@ const { getJson } = require("serpapi");
 // }, (json) => {
 //   console.log(json);
 // });
->>>>>>> 5b4d04164d3c7174d002626a1f744c706ff891bd
 
 function App() {
   const [notes, setNotes] = useState([]); // State for notes array
