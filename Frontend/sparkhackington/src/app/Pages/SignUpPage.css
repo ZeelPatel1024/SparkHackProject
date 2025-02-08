@@ -7,12 +7,21 @@
     box-shadow: 5px 5px 10px 2px rgb(0 0 0 / 0.8);
 }
 
+.stuff{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 .signupPage{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    margin-top: 200px;
+    /* margin-top: 200px; */
 }
 
 .insideSignupText{

@@ -105,8 +105,10 @@ export default function SignUpPage () {
    }
 
   return (
-    <div>
+    <div className='stuff'>
+    
     <button onClick={back} className="stoppppp">Back to home</button>
+    
     <div className='signupPage'>
          <div className="signUpBox">
             <div className='insideSignupText'>
