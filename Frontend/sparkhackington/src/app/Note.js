@@ -12,6 +12,7 @@ function Note(props) {
         }}
       ></img>
       <p>{props.content}</p>
+      <p><a href= {`mailto:${props.email}`}>Send email</a></p>
       <button
         onClick={() => {
           props.delete(props.id);
@@ -22,5 +23,4 @@ function Note(props) {
     </div>
   );
 }
-
 export default Note;
