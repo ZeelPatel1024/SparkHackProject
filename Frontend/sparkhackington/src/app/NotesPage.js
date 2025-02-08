@@ -2,12 +2,25 @@
 
 import React from "react";
 import Note from "./Note";
+import { useNavigate } from "react-router-dom";
+
+
 
 function NotesPage({ notes, deleteNote }) {
+
+  const navigate = useNavigate(); 
+  function back(event) {
+    event.preventDefault();
+    navigate("/"); // Redirect to main page
+  }
+
   return (
     <div>
-      <h1>Tasks</h1>
+      
+      
       {notes.map((noteItem, index) => (
+        <>
+        <h1>{noteItem.title} Tasks<button onClick={back}>←</button></h1>
         <Note
           key={index}
           id={index}
@@ -16,6 +29,7 @@ function NotesPage({ notes, deleteNote }) {
           delete={deleteNote}
           image={noteItem.image}
         />
+        </>
       ))}
     </div>
   );
