@@ -25,7 +25,9 @@ function NotesPage({ notes, deleteNote }) {
           key={index}
           id={index}
           title={noteItem.title}
+          location={noteItem.location}
           content={noteItem.content}
+          email={noteItem.email}
           delete={deleteNote}
           image={noteItem.image}
         />

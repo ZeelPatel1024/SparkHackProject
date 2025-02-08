@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function CreateArea(props) {
-  const [note, setNote] = useState({ title: "", content: "", image: "" ,email: ""});
+  const [note, setNote] = useState({ title: "", location: "", content: "", image: "" ,email: ""});
   const navigate = useNavigate(); // Hook for navigation
 
   function typeNote(event) {
@@ -25,7 +25,7 @@ function CreateArea(props) {
     event.preventDefault();
     props.onAdd(note);
 
-    setNote({ title: "", content: "", image: "" , email: ""}); // Clear input fields
+    setNote({ title: "", location: "", content: "", image: "" , email: ""}); // Clear input fields
 
     navigate("/notes"); // Redirect to notes page
   }
@@ -34,6 +34,7 @@ function CreateArea(props) {
     <div>
       <form>
         <input name="title" placeholder="Enter Task/Job" value={note.title} onChange={typeNote} />
+        <input name="location" placeholder="Enter Location" value={note.location} onChange={typeNote} />
         <input type="file" accept="image/*" onChange={typeNote} name="image" />
         {note.image && <img src={note.image} alt="Preview" style={{ width: "100px", height: "100px" }} />}
         <textarea name="content" placeholder="Write a job description..." rows="3" value={note.content} onChange={typeNote} />
