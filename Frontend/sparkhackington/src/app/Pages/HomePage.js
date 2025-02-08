@@ -45,7 +45,7 @@ export default function Home() {
       <nav>
       <div class = "nav">
     <div class="group">
-        <button>Login</button>
+        <button onClick ={navigateToSignUpPage}>Login</button>
         <button>About</button>
     </div>
       </div>
