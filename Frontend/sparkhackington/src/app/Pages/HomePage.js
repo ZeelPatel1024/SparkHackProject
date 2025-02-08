@@ -55,7 +55,7 @@ export default function Home() {
       Welcome to Harsh Dizzler
       <div>
         <button onClick={submitNote}>Click to redirect</button>
-        <button  onClick={navigateToSignUpPage} >Create Buisness Account</button>
+        <button onClick={navigateToSignUpPage}>Create Buisness Account</button>
       </div>
     </header>
     </div>

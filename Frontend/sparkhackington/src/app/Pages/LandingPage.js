@@ -12,17 +12,41 @@ export default function LandingPage() {
     const location = useLocation();
   // Access passed data from location.state
 //   const { id } = location.state || {}; // Default to empty object if undefined
-    const id = location.state.LOL;
+    const [items, setItems] = useState([]);
 
   useEffect(() => {
-    alert(location.state);
+    const items = JSON.parse(localStorage.getItem('items'));
+    if (items) {
+     setItems(items);
+    }
   }, []);
 
   return (
-    <div className="landing"> 
- 
+
+    <div className="landingPage"> 
         <h1>LandingPage</h1>
-        <p>{id}</p>
+        <p>{items}</p>
+
+        <div className="landing">
+            <div className="comps">
+                <div className="cardComp">
+                    <h1>Add Buisness</h1>
+                </div>
+                <div className="cardComp">
+                    <h1>Add Job</h1>
+                </div>
+            </div>
+
+            <div className="comps">
+                <div className="cardComp">
+                    <h1>List All Buisness</h1>
+                </div>
+                <div className="cardComp">
+                    <h1>Add All Jobs</h1>
+                </div>
+            </div>
+        </div>
+
     </div>
   );
 }
