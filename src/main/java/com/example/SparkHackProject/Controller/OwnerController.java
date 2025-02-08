@@ -1,13 +1,12 @@
 package com.example.SparkHackProject.Controller;
 
-import com.example.SparkHackProject.Model.Job;
-import com.example.SparkHackProject.Model.JobRequest;
-import com.example.SparkHackProject.Model.Owner;
+import com.example.SparkHackProject.Model.*;
 import com.example.SparkHackProject.Service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*") //Needed to connect to frontend application
@@ -29,6 +28,12 @@ public class OwnerController {
         return jobRequest.getOwner_id();
     }
 
+    @PostMapping(value="/saveBusiness") // Save owner
+    public String saveBusiness(@RequestBody BusinessRequest businessRequest){
+        ownerService.addBusiness(businessRequest.getOwner_id(), businessRequest.getBusiness());
+        return businessRequest.getOwner_id();
+    }
+
     @GetMapping(value="/getAll") // get all owners
     private Iterable<Owner> getOwners(){
         return ownerService.listAll();
@@ -42,13 +47,18 @@ public class OwnerController {
     }
 
     @DeleteMapping("/delete/{id}") //delete owner by id
-    private void deleteStudent(@PathVariable("id") String id){
+    private void deleteOwner(@PathVariable("id") String id){
         ownerService.deleteOwner(id);
     }
 
     @RequestMapping("/search/{id}") //search an owner by id
-    private Owner getStudents(@PathVariable(name = "id") String owner_id){
+    private Owner getOwners(@PathVariable(name = "id") String owner_id){
         return ownerService.getOwnerId(owner_id);
+    }
+
+    @RequestMapping("/login") //search an owner by id
+    public Optional<Owner> getOwnerByEmail(@RequestBody EmailRequest request) {
+        return ownerService.getOwnerByEmail(request.getEmail());
     }
 
     @RequestMapping("/search_job_listing/{id}") // search a job listing by owner id

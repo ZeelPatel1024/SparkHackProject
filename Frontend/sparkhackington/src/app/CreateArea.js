@@ -8,9 +8,12 @@ function CreateArea(props) {
     latitude: "", 
     content: "", 
     image: "",
-    email: ""
+    email: "",
+    url: ""
   });
   const [locations, setLocations] = useState([]);
+  const [url, setUrl] = useState('');
+
   const navigate = useNavigate();
 
   function notes(event) {
@@ -53,7 +56,7 @@ function CreateArea(props) {
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(note.title)}&ll=${note.latitude},${note.longitude}`;
     
     // Clear the note form
-    setNote({ title: "", longitude: "", latitude: "", content: "", image: "", email: "" });
+    //setNote({ title: "", longitude: "", latitude: "", content: "", image: "", email: "" });
 
     // Navigate to Google Maps URL
     window.open(googleMapsUrl, '_blank');
@@ -75,21 +78,6 @@ function CreateArea(props) {
         <input type="email" name="email" placeholder="Enter Email Contact" value={note.email} onChange={typeNote} />
         <button onClick={submitNote}>✎</button>
       </form>
-
-      {/* Display location history */}
-      <div className="location-history">
-        <h3>Location History</h3>
-        {locations.map((loc, index) => (
-          <div key={index} className="location-entry">
-            <p>
-              <strong>{loc.title}</strong><br />
-              Latitude: {loc.latitude}<br />
-              Longitude: {loc.longitude}<br />
-              Added: {loc.timestamp}
-            </p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
