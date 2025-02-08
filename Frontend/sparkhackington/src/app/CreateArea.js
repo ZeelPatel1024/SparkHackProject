@@ -7,6 +7,11 @@ function CreateArea(props) {
   const [note, setNote] = useState({ title: "", location: "", content: "", image: "" ,email: ""});
   const navigate = useNavigate(); // Hook for navigation
 
+  function notes(event) {
+    event.preventDefault();
+    navigate("/notes"); // Redirect to main page
+  }
+
   function typeNote(event) {
     const { name, value, files } = event.target;
     if (name === "image" && files.length > 0) {
@@ -32,6 +37,7 @@ function CreateArea(props) {
 
   return (
     <div>
+      <button onClick={notes}>View Tasks</button>
       <form>
         <input name="title" placeholder="Enter Task/Job" value={note.title} onChange={typeNote} />
         <input name="location" placeholder="Enter Location" value={note.location} onChange={typeNote} />
