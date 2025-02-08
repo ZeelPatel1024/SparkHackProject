@@ -8,6 +8,7 @@ export default function MyApp() {
   return (
     <div>
       <h1>mr take that risk</h1>
+      <h1>test</h1>
       <MyButton />
     </div>
   );
