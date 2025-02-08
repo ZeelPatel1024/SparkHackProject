@@ -12,7 +12,7 @@ function NotesPage({ notes, deleteNote }) {
   const navigate = useNavigate(); 
   function back(event) {
     event.preventDefault();
-    navigate("/landingPage"); // Redirect to main page
+    navigate("/"); // Redirect to main page
   }
 
   return (

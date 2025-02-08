@@ -101,7 +101,7 @@ export default function SignUpPage () {
 
    function back(event){
     event.preventDefault();
-    navigate("/");
+    navigate("/")
    }
 
   return (
