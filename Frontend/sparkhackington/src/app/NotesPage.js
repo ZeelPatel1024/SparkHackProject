@@ -16,20 +16,21 @@ function NotesPage({ notes, deleteNote }) {
 
   return (
     <div>
-      
-      
+      <h1>Tasks
+        <br></br>
+        <button onClick={back}>Back to main page ←</button>
+        </h1>
       {notes.map((noteItem, index) => (
-        <>
-        <h1>{noteItem.title} Tasks<button onClick={back}>←</button></h1>
         <Note
           key={index}
           id={index}
           title={noteItem.title}
+          location={noteItem.location}
           content={noteItem.content}
+          email={noteItem.email}
           delete={deleteNote}
           image={noteItem.image}
         />
-        </>
       ))}
     </div>
   );
