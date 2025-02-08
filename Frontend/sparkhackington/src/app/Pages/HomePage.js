@@ -2,10 +2,9 @@
 // There will be a slight error but that will be resolved once we make it look pretty.
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import './HomePage.css'
+import '../styles.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-// import NavBar from "../components/NavBar";
 
 export default function Home() {
 
@@ -43,6 +42,7 @@ export default function Home() {
     }
 
   return (
+<<<<<<< HEAD
     <div className="home"> 
             <h1 >Welcome to _______</h1>
             <button onClick={submitNote}>Click to redirect</button>
@@ -54,6 +54,24 @@ export default function Home() {
               );
             })}
 
+=======
+    <div>
+      <nav>
+      <div class = "nav">
+    <div class="group">
+        <button>Login</button>
+        <button>About</button>
+    </div>
+      </div>
+      </nav>
+      <header className="Mohan">
+      Welcome to Harsh Dizzler
+      <div>
+        <button onClick={submitNote}>Click to redirect</button>
+        <button>Create Buisness Account</button>
+      </div>
+    </header>
+>>>>>>> 5b4d04164d3c7174d002626a1f744c706ff891bd
     </div>
   );
 }

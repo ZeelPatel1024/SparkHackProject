@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Note(props) {
+function Note(props,googleMapsUrl) {
 
   return (
     <div className="note">
       <h1>{props.title}</h1>
-      <a target="_blank" rel="noopener noreferrer" href = "https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(prop.title)}&ll=${prop.latitude},${prop.longitude}">Location</a>
+      <p>Location: {googleMapsUrl}</p>
       <img
         style={{
           backgroundImage: `url(${props.image})`,

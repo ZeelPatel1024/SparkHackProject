@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import Note from "./Note";
+import Note from "../note/Note";
 import { useNavigate } from "react-router-dom";
-import "./stopp.css";
 
 
 
@@ -17,8 +16,9 @@ function NotesPage({ notes, deleteNote }) {
 
   return (
     <div>
-        <h1>Task
-          <button onClick={back} className="stoppppp">Back to main page ←</button>
+      <h1>Tasks
+        <br></br>
+        <button onClick={back}>Back to main page ←</button>
         </h1>
       {notes.map((noteItem, index) => (
         <Note
