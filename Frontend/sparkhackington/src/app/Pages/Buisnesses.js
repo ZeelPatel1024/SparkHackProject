@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import './businesses.css'
 
 
 export default function BusinessOwnersList() {
@@ -27,6 +28,7 @@ export default function BusinessOwnersList() {
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Type</th>
                         </tr>
                     </thead>
                     <tbody>
