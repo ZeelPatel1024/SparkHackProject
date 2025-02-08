@@ -61,8 +61,6 @@ export default function SignUpPage () {
           setInputCreatePassword("");
           setInputCreateEmail("");
         //   navigate("/landingPage", { state: { LOL: "Hi" } });
-            localStorage.setItem('items', JSON.stringify(response.data.id));
-          navigate('/landingPage');
           
         }
     catch(err)

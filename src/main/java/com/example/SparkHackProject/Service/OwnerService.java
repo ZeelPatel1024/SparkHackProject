@@ -82,4 +82,13 @@ public class OwnerService {
         return owner.get().getJob_listing();
     }
 
+    public List<Business> getBusinesses(String ownerId){
+        Optional<Owner> owner = ownerRepo.findById(ownerId);
+
+        if(owner == null){
+            return Collections.emptyList();
+        }
+        return owner.get().getBusiness_list();
+    }
+
 }

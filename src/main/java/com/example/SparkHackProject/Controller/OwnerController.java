@@ -66,4 +66,9 @@ public class OwnerController {
         return ownerService.getJobListing(owner_id);
     }
 
+    @RequestMapping("/search_businesses/{id}") // search a job listing by owner id
+    private List<Business> getBusinesses(@PathVariable(name = "id") String owner_id){
+        return ownerService.getBusinesses(owner_id);
+    }
+
 }
