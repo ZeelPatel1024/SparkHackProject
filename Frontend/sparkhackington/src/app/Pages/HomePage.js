@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className="home"> 
             <h1 >Welcome to _______</h1>
-            <button onClick={submitNote}>Click to redirect</button>
+            <button onClick={submitNote}>View Tasks</button>
             <button>Create Buisness Account</button>
             <button>Login Buisness Account</button>
             {jobs.map(function fn(job)
