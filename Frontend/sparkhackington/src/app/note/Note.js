@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Note(props) {
+function Note(props,googleMapsUrl) {
 
   return (
     <div className="note">
       <h1>{props.title}</h1>
-      <p>Location: {props.location}</p>
+      <p>Location: {googleMapsUrl}</p>
       <img
         style={{
           backgroundImage: `url(${props.image})`,
