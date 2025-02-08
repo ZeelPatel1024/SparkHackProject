@@ -2,10 +2,9 @@
 // There will be a slight error but that will be resolved once we make it look pretty.
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import './HomePage.css'
+import '../styles.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-// import NavBar from "../components/NavBar";
 
 export default function Home() {
 
@@ -38,18 +37,22 @@ export default function Home() {
     }
 
   return (
-    <div className="home"> 
-            <h1 >Welcome to _______</h1>
-            <button onClick={submitNote}>Click to redirect</button>
-            <button>Create Buisness Account</button>
-            <button>Login Buisness Account</button>
-            {jobs.map(function fn(job)
-            {
-              return(
-                <h1>{job.name} {job.description} {job.image} {job.available ? <h1>True</h1> : <h1>False</h1>}</h1>
-              );
-            })}
-
+    <div>
+      <nav>
+      <div class = "nav">
+    <div class="group">
+        <button>Login</button>
+        <button>About</button>
+    </div>
+      </div>
+      </nav>
+      <header className="Mohan">
+      Welcome to Harsh Dizzler
+      <div>
+        <button onClick={submitNote}>Click to redirect</button>
+        <button>Create Buisness Account</button>
+      </div>
+    </header>
     </div>
   );
 }
