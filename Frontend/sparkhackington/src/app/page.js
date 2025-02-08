@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Footer from "./footer";
-import Note from "./Note";
-import CreateArea from "./CreateArea";
+import Footer from "./components/footer";
+import Note from "./components/Note";
+import CreateArea from "./components/CreateArea";
 
 function App() {
   const [notes, setNotes] = useState([]); //adding objects into an array array object list
