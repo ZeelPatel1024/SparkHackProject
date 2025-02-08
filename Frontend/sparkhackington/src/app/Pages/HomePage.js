@@ -33,11 +33,10 @@ export default function Home() {
     }, []);
     
        
-       
     async function  Load(){
       const result = await axios.get(
         "http://localhost:8080/api/v1/job/getAll");
-        setJobs(result.data);
+        setJobs(result.data)
         console.log(result.data);
     }
 
@@ -52,7 +51,7 @@ export default function Home() {
       </div>
       </nav>
       <header className="Mohan">
-      Welcome to Harsh Dizzler
+      <span>Snap Link</span>
       <div>
         <button onClick={submitNote}>Click to redirect</button>
         <button onClick={navigateToSignUpPage}>Create Buisness Account</button>
