@@ -37,20 +37,6 @@ export default function Home() {
     }
 
   return (
-<<<<<<< HEAD
-    <div className="home"> 
-            <h1 >Welcome to _______</h1>
-            <button onClick={submitNote}>View Tasks</button>
-            <button>Create Buisness Account</button>
-            <button>Login Buisness Account</button>
-            {jobs.map(function fn(job)
-            {
-              return(
-                <h1>{job.name} {job.description} {job.image} {job.available ? <h1>True</h1> : <h1>False</h1>}</h1>
-              );
-            })}
-
-=======
     <div>
       <nav>
       <div class = "nav">
@@ -67,7 +53,6 @@ export default function Home() {
         <button>Create Buisness Account</button>
       </div>
     </header>
->>>>>>> 2acb2e6b77bd3e30b78b88577707ca43e77d896b
     </div>
   );
 }
