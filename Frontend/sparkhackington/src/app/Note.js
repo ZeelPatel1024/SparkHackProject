@@ -6,7 +6,7 @@ function Note(props) {
   return (
     <div className="note">
       <h1>{props.title}</h1>
-      <p>Location: {props.location}</p>
+      <p><a target="_blank" rel="noopener noreferrer" href= {`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.title)}&ll=${props.latitude},${props.longitude}`}>Location</a></p>
       <img
         style={{
           backgroundImage: `url(${props.image})`,
