@@ -28,4 +28,10 @@
 body {
   background-color: white;
   justify-content: center;
+  text-align: center;
+}
+
+span{
+  text-align: center;
+  color: blue!important;
 }

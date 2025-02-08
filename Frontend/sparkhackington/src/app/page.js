@@ -10,6 +10,7 @@ import NotesPage from "./NotesPage";
 import Home from "./Pages/HomePage";
 import SignUpPage from "./Pages/SignUpPage";
 import LandingPage from "./Pages/LandingPage";
+import Buisnesses from "./Pages/Buisnesses"
 
 const { getJson } = require("serpapi");
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/addNote" element={<CreateArea onAdd={addNote} />} />
         <Route path="/signIn" element={<SignUpPage></SignUpPage>} />
         <Route path="/landingPage" element={<LandingPage></LandingPage>} />
+        <Route path="/Owners" element={<Buisnesses></Buisnesses>} />
         <Route
           path="/notes"
           element={
