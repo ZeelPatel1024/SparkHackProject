@@ -13,7 +13,7 @@
   }
   
   header {
-    background-color: #f57913;
+    background-color: #201e1d;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -73,7 +73,7 @@
     position: relative;
     float: right;
     margin-right: 10px;
-    color: #f5ba13;
+    color: #232220;
     border: none;
     width: 36px;
     height: 36px;

@@ -1,7 +1,7 @@
 import React from "react";
 
 function Footer() {
-  const year = new Date().getFullYear();
+  const year = "2025";
   return (
     <footer>
       <p>&copy; {year}</p>
