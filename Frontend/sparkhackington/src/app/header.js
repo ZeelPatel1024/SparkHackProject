@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <h1>RecipeGo - Takeout/Home Food Tracker, Find Recipes, and More</h1>
+      <h1>Donezo</h1>
     </header>
   );
 }
