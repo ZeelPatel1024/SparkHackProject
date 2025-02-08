@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import './HomePage.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+// import NavBar from "../components/NavBar";
 
 export default function Home() {
 
@@ -26,6 +27,7 @@ export default function Home() {
     useEffect(() => {
       (async () => await Load())();
     }, []);
+    
        
        
     async function  Load(){
@@ -39,6 +41,8 @@ export default function Home() {
     <div className="home"> 
             <h1 >Welcome to _______</h1>
             <button onClick={submitNote}>Click to redirect</button>
+            <button>Create Buisness Account</button>
+            <button>Login Buisness Account</button>
             {jobs.map(function fn(job)
             {
               return(

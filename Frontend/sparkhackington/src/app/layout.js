@@ -5,9 +5,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header>
+        {/* <header>
           <h1>Create New Job/Task</h1>
-        </header>
+        </header> */}
         {children}
       </body>
     </html>
