@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* .home{ */
     /* display: flex; */
     /* transition-duration: 10s; */
@@ -25,3 +26,9 @@
     gap: 50px;
 } */
 
+=======
+body {
+  background-color: white;
+  justify-content: center;
+}
+>>>>>>> 2acb2e6b77bd3e30b78b88577707ca43e77d896b
