@@ -47,7 +47,7 @@ function CreateArea(props) {
   return (
     <div>
       <form>
-        <input name="title" placeholder="Food Name" onChange={typeNote} />
+        <input name="title" placeholder="Enter Task/Job" onChange={typeNote} />
         <input type="file" accept="image/*" onChange={typeNote} name="image" />
         <img
           style={{
@@ -61,7 +61,7 @@ function CreateArea(props) {
         <textarea
           onChange={typeNote}
           name="content"
-          placeholder="Write a recipe..."
+          placeholder="Write a job description..."
           rows="3"
         />
         <button onClick={submitNote}>✎</button>
