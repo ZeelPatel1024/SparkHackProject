@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from '../components/Header'
 
 function CreateArea(props) {
   const [note, setNote] = useState({ title: "", content: "", image: "" });
@@ -32,6 +33,7 @@ function CreateArea(props) {
 
   return (
     <div>
+      <Header></Header>
       <form>
         <input name="title" placeholder="Enter Task/Job" value={note.title} onChange={typeNote} />
         <input type="file" accept="image/*" onChange={typeNote} name="image" />

@@ -7,6 +7,8 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 import NotesPage from "./NotesPage";
 
+import Home from "./Pages/HomePage";
+
 
 function App() {
   const [notes, setNotes] = useState([]); // State for notes array
@@ -23,7 +25,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<CreateArea onAdd={addNote} />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/addNote" element={<CreateArea onAdd={addNote} />} />
         <Route
           path="/notes"
           element={
