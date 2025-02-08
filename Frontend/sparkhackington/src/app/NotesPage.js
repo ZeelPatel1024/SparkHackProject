@@ -12,13 +12,13 @@ function NotesPage({ notes, deleteNote }) {
   const navigate = useNavigate(); 
   function back(event) {
     event.preventDefault();
-    navigate("/"); // Redirect to main page
+    navigate("/landingPage"); // Redirect to main page
   }
 
   return (
     <div>
         <h1>Task
-          <button onClick={back} className="stoppppp">Back to main page ←</button>
+          <button onClick={back} className="stoppppp">Back to landing page ←</button>
         </h1>
       {notes.map((noteItem, index) => (
         <Note

@@ -29,6 +29,16 @@ export default function LandingPage() {
     navigate("/Owners");
   }
 
+  function NavigateToJobs(event){
+    event.preventDefault();
+    navigate("/notes");
+  }
+
+  function NavigateToCrateJob(event){
+    event.preventDefault();
+    navigate("/addNote");
+  }
+
   return (
 
     <div className="landingPage"> 
@@ -41,7 +51,7 @@ export default function LandingPage() {
                     <h1>Add Buisness</h1>
                 </div>
                 <div className="cardComp">
-                    <h1>Add Job</h1>
+                <button onClick={NavigateToCrateJob}><h1>Add Job</h1></button>
                 </div>
             </div>
 
@@ -50,7 +60,7 @@ export default function LandingPage() {
                     <button onClick={NavigateToBuisnesses}><h1>List All Buisness</h1></button>
                 </div>
                 <div className="cardComp">
-                    <h1>Add All Jobs</h1>
+                <button onClick={NavigateToJobs}><h1>List All Jobs</h1></button>
                 </div>
             </div>
         </div>
