@@ -1,11 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "./footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
-import NotesPage from "./NotesPage";
 
 function App() {
   const [notes, setNotes] = useState([]); // State for notes array
