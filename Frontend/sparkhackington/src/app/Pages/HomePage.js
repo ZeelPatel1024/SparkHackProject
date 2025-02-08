@@ -22,7 +22,12 @@ export default function Home() {
     function submitNote(event) {
         event.preventDefault();
         navigate("/addNote"); // Redirect to notes page
-      }
+    }
+
+    function navigateToSignUpPage(event){
+      event.preventDefault();
+      navigate("/signIn")
+    }
 
     useEffect(() => {
       (async () => await Load())();
@@ -41,8 +46,7 @@ export default function Home() {
     <div className="home"> 
             <h1 >Welcome to _______</h1>
             <button onClick={submitNote}>Click to redirect</button>
-            <button>Create Buisness Account</button>
-            <button>Login Buisness Account</button>
+            <button onClick={navigateToSignUpPage}>Login Buisness Account</button>
             {jobs.map(function fn(job)
             {
               return(

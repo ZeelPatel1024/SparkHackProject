@@ -1,0 +1,33 @@
+.signUpBox{
+    border-style: solid;
+    border-radius:  10px;
+    border-color: black;
+    width: 500px;
+    height: 500px;
+    box-shadow: 5px 5px 10px 2px rgb(0 0 0 / 0.8);
+}
+
+.signupPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 200px;
+}
+
+.insideSignupText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.inputsCreateAccount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}

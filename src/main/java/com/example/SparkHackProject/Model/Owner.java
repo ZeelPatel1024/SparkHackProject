@@ -11,21 +11,21 @@ public class Owner {
     private String id; //Mongo auto has string id's
     private String name;
 
-    private String business_id;
+    private String password;
 
-    private String business_name;
+    private String email;
 
     private List<Job> job_listing;
 
-    //jobs, finances,
+    private List<Business> business_list;
 
-
-    public Owner(String id, String name, String business_id, String business_name, List<Job> job_listing) {
+    public Owner(String id, String name, String password, String email, List<Job> job_listing, List<Business> business_list) {
         this.id = id;
         this.name = name;
-        this.business_id = business_id;
-        this.business_name = business_name;
+        this.password = password;
+        this.email = email;
         this.job_listing = job_listing;
+        this.business_list = business_list;
     }
 
     @Override
@@ -33,10 +33,35 @@ public class Owner {
         return "Owner{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", business_id='" + business_id + '\'' +
-                ", business_name='" + business_name + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
                 ", job_listing=" + job_listing +
+                ", business_list=" + business_list +
                 '}';
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Business> getBusiness_list() {
+        return business_list;
+    }
+
+    public void setBusiness_list(List<Business> business_list) {
+        this.business_list = business_list;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getId() {
@@ -53,22 +78,6 @@ public class Owner {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getBusiness_id() {
-        return business_id;
-    }
-
-    public void setBusiness_id(String business_id) {
-        this.business_id = business_id;
-    }
-
-    public String getBusiness_name() {
-        return business_name;
-    }
-
-    public void setBusiness_name(String business_name) {
-        this.business_name = business_name;
     }
 
     public List<Job> getJob_listing() {

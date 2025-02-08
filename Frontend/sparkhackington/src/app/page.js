@@ -8,7 +8,8 @@ import CreateArea from "./CreateArea";
 import NotesPage from "./NotesPage";
 
 import Home from "./Pages/HomePage";
-
+import SignUpPage from "./Pages/SignUpPage";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   const [notes, setNotes] = useState([]); // State for notes array
@@ -27,6 +28,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/addNote" element={<CreateArea onAdd={addNote} />} />
+        <Route path="/signIn" element={<SignUpPage></SignUpPage>} />
+        <Route path="/landingPage" element={<LandingPage></LandingPage>} />
         <Route
           path="/notes"
           element={

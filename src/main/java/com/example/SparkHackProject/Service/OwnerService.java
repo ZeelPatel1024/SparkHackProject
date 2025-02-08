@@ -1,7 +1,9 @@
 package com.example.SparkHackProject.Service;
 
+import com.example.SparkHackProject.Controller.BusinessController;
 import com.example.SparkHackProject.Controller.JobController;
 import com.example.SparkHackProject.Controller.OwnerController;
+import com.example.SparkHackProject.Model.Business;
 import com.example.SparkHackProject.Model.Job;
 import com.example.SparkHackProject.Model.Owner;
 import com.example.SparkHackProject.Repo.JobRepo;
@@ -21,8 +23,11 @@ public class OwnerService {
 
     JobController jobController;
 
-    public OwnerService(JobController jobController) {
+    BusinessController businessController;
+
+    public OwnerService(JobController jobController, BusinessController businessController) {
         this.jobController = jobController;
+        this.businessController = businessController;
     }
 
     public void saveOrUpdate(Owner owner) {
@@ -38,6 +43,22 @@ public class OwnerService {
         deleteOwner(owner_id);
         saveOrUpdate(owner);
         jobController.saveJob(job);
+    }
+
+    public void addBusiness(String owner_id, Business business){
+
+        Owner owner = getOwnerId(owner_id);
+        List<Business> current_businesses = owner.getBusiness_list();
+        current_businesses.add(business);
+        owner.setBusiness_list(current_businesses);
+        deleteOwner(owner_id);
+        saveOrUpdate(owner);
+        businessController.saveBusiness(business);
+    }
+
+
+    public Optional<Owner> getOwnerByEmail(String email) {
+        return ownerRepo.findByEmail(email);
     }
 
     public Iterable<Owner> listAll() {
