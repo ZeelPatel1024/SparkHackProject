@@ -23,7 +23,7 @@
   
   header h1 {
     color: #fff;
-    font-family: "McLaren", cursive;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 200;
     font-size: 25px;
   }
@@ -107,8 +107,8 @@
     background: #f5ba13;
     color: #fff;
     border: none;
-    border-radius: 50%;
-    width: 36px;
+    border-radius: 10%;
+    width: 72px;
     height: 36px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
