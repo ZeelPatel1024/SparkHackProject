@@ -1,7 +1,14 @@
-import Image from "next/image";
-
-export default function Home() {
+function MyButton() {
   return (
-    <h1>mr take that risk</h1>
+    <button>I'm a button</button>
+  );
+}
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>mr take that risk</h1>
+      <MyButton />
+    </div>
   );
 }
