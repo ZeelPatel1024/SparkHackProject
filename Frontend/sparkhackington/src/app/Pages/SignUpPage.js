@@ -99,7 +99,14 @@ export default function SignUpPage () {
         }
    }
 
+   function back(event){
+    event.preventDefault();
+    navigate("/");
+   }
+
   return (
+    <div>
+    <button onClick={back} className="stoppppp">Back to home</button>
     <div className='signupPage'>
          <div className="signUpBox">
             <div className='insideSignupText'>
@@ -152,6 +159,7 @@ export default function SignUpPage () {
                 <button onClick={login}>Log In</button>
             </div>
         </div>
+    </div>
     </div>
   )
 }
