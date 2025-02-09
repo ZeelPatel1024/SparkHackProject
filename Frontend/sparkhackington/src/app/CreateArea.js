@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
+import { useEffect } from 'react'
 
 function CreateArea(props) {
   const [note, setNote] = useState({ 
@@ -13,6 +15,7 @@ function CreateArea(props) {
   });
   const [locations, setLocations] = useState([]);
   const [url, setUrl] = useState('');
+  const [items, setItems] = useState();
 
   const navigate = useNavigate();
 
@@ -35,9 +38,29 @@ function CreateArea(props) {
     }
   }
 
-  function submitNote(event) {
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('items'));
+    // alert(items);
+    setItems(items);
+  }, []);
+
+  async function submitNote(event) {
+
     event.preventDefault();
-    props.onAdd(note);
+    try
+        {
+            const response = await axios.post("http://localhost:8080/api/v1/owner/saveJob",
+        {
+        owner_id: items,
+        job: {
+            name: note.title,
+            description: note.content,
+            image: "None",
+            ownerId: items,
+            available: true
+        }
+        });
+        props.onAdd(note);
 
     // Add location to locations array before clearing
     if (note.latitude && note.longitude) {
@@ -63,7 +86,48 @@ function CreateArea(props) {
 
     // Navigate back to notes page
     navigate("/notes");
+          
+        }
+    catch(err)
+        {
+          alert("Failed " + err);
+        }
   }
+
+  // async function save(event)
+  //   {
+  //       event.preventDefault();
+  //   try
+  //       {
+  //           const response = await axios.post("http://localhost:8080/api/v1/owner/saveJob",
+  //       {
+  //       owner_id: items,
+  //       job: {
+  //           name: businessesName,
+  //           location: businessesLocation,
+  //           category: businessesCategory,
+  //           description: businessesDescription
+  //       }
+  //       });
+  //       setBusinessesName("");
+  //       setBusinessesLocation("");
+  //       setBusinessesCategory("");
+  //       setBusinessesDescription("");
+        
+  //       // alert("added buisness");
+  //       (async () => await Load(items))();
+          
+  //       }
+  //   catch(err)
+  //       {
+  //         alert("Failed");
+  //       }
+    
+  //  }
+
+  //  const addName = (event) => {
+  //   setBusinessesName(event.target.value);
+  //   };
 
   return (
     <div>
