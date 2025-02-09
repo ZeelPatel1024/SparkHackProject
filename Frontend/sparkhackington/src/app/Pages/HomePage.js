@@ -28,6 +28,11 @@ export default function Home() {
       navigate("/signIn")
     }
 
+    function Devpost(event){
+      event.preventDefault();
+      navigate("https://devpost.com/software/snap-link?ref_content=user-portfolio&ref_feature=in_progress");
+    }
+
     useEffect(() => {
       (async () => await Load())();
     }, []);
@@ -46,7 +51,7 @@ export default function Home() {
       <div class = "nav">
     <div class="group">
         <button onClick ={navigateToSignUpPage}>Login</button>
-        <button>About</button>
+        <a target="_blank" rel="noopener noreferrer" href = "https://devpost.com/software/snap-link?ref_content=user-portfolio&ref_feature=in_progress">About</a>
     </div>
       </div>
       </nav>

@@ -1,0 +1,22 @@
+body{
+    justify-content: center;
+    text-align: center;
+}
+.table-container {
+    background-color: rgb(92, 185, 255);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1%;
+    margin: 2%;
+}
+tbody {
+    background-color: rgb(170, 213, 253);
+    margin: 5%;
+    padding: 5%;
+    font-size: 2em;
+}
+
+.owners-table {
+    font-size: 2em;
+}
